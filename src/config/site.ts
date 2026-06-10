@@ -1,5 +1,7 @@
 export const SITE_URL = 'https://www.edibleera.in'
 export const SITE_EMAIL = 'info@edibleera.in'
+export const SITE_PHONE = '+918954556644'
+export const SITE_WHATSAPP = 'https://wa.me/918954556644'
 export const SITE_NAME = 'Edible Era Oil & Fats'
 
 export const organizationSchema = {

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, useLocation } from 'react-router-dom'
 
+import { SocialIconButtons } from '@/components/ui/social-icon-buttons'
+
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
@@ -107,7 +109,9 @@ export function Navigation() {
               className="mobile-menu-link mt-auto"
               style={{ animationDelay: `${120 + navItems.length * 70}ms` }}
             >
-              <p className="text-xs uppercase tracking-[0.2em] text-[#6F6F6F]">
+              <SocialIconButtons compact className="justify-start" />
+
+              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-[#6F6F6F]">
                 Edible Era Oil & Fats
               </p>
               <a
@@ -129,7 +133,7 @@ export function Navigation() {
 
   return (
     <>
-      <nav className="relative z-20 mx-auto max-w-7xl px-8 py-6">
+      <nav className="relative z-20 mx-auto max-w-7xl overflow-visible px-8 py-6">
         <div className="flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center">
           <Link
             to="/"
@@ -146,7 +150,7 @@ export function Navigation() {
             />
           </Link>
 
-          <ul className="hidden items-center justify-center gap-8 lg:flex">
+          <ul className="hidden items-center justify-center gap-4 xl:gap-5 lg:flex">
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link to={item.href} className={desktopLinkClass(item.href)}>
@@ -156,13 +160,8 @@ export function Navigation() {
             ))}
           </ul>
 
-          <div className="flex items-center justify-end gap-4 lg:justify-self-end">
-            <Link
-              to="/contact"
-              className="hidden rounded-full bg-[#000000] px-6 py-2.5 text-sm text-[#FFFFFF] transition-transform hover:scale-[1.03] lg:inline-flex"
-            >
-              Begin Journey
-            </Link>
+          <div className="flex items-center justify-end lg:justify-self-end">
+            <SocialIconButtons compact className="hidden items-center lg:inline-flex" />
 
             {!menuOpen ? (
               <HamburgerToggle menuOpen={menuOpen} onToggle={setMenuOpen} />

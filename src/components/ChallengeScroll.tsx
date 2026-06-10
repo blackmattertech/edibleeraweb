@@ -119,6 +119,10 @@ const sections: ChallengeSection[] = [
     contentGrouped: true,
     sidePanel: true,
     sidePanelVariant: 'green',
+    cta: {
+      label: 'Contact Us',
+      href: '/contact',
+    },
   },
 ]
 
@@ -289,6 +293,15 @@ function ChallengePanel({
                     {line}
                   </p>
                 ))}
+
+                {section.cta && (
+                  <Link
+                    to={section.cta.href}
+                    className="mt-6 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-transform hover:scale-[1.03]"
+                  >
+                    {section.cta.label}
+                  </Link>
+                )}
               </div>
 
               {belowCards && cardList('below')}
@@ -330,7 +343,7 @@ function ChallengePanel({
                 {section.cta && (
                   <Link
                     to={section.cta.href}
-                    className="mt-6 inline-flex rounded-full bg-[#3EC45A] px-6 py-3 text-sm font-medium text-[#000000] transition-transform hover:scale-[1.03]"
+                    className="mt-6 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-transform hover:scale-[1.03]"
                   >
                     {section.cta.label}
                   </Link>

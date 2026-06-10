@@ -33,6 +33,34 @@
   opacity: 0;
 }
 
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 30s) linear infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
 /* From Uiverse.io by JulanDeAlb — adapted for Edible Era */
 .hamburger {
   cursor: pointer;
@@ -117,4 +145,161 @@
 .mobile-menu-link {
   animation: mobile-link-in 0.5s ease-out forwards;
   opacity: 0;
+}
+
+/* From Uiverse.io by escannord — adapted for Edible Era */
+.social-icon-wrapper--compact .social-icon {
+  height: 40px;
+  width: 40px;
+  margin: 0 2px;
+  font-size: 16px;
+}
+
+.social-icon-wrapper .social-icon {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  height: 44px;
+  width: 44px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #ffffff;
+  margin: 6px;
+  font-size: 18px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #1a1a1a;
+}
+
+.social-icon-wrapper .social-icon::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  z-index: -1;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.social-icon-wrapper .social-icon:hover::after {
+  animation: social-bg-pos 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1 both;
+}
+
+.social-icon-wrapper .social-icon:hover {
+  overflow: unset;
+  color: #ffffff;
+  transition: color 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: social-overflow-toggle 0.7s;
+}
+
+.social-icon-wrapper .social-icon-tooltip {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #ffffff;
+  opacity: 0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-icon-wrapper .social-icon-tooltip::before {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  height: 8px;
+  width: 8px;
+  transform: translate(-50%) rotate(45deg);
+  background: #ffffff;
+  content: '';
+  transition: all 0.3s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-icon-wrapper .social-icon:hover .social-icon-tooltip {
+  top: -42px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.social-icon-wrapper .social-icon:hover .social-icon-tooltip,
+.social-icon-wrapper .social-icon:hover .social-icon-tooltip::before {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.social-icon-wrapper .facebook::after {
+  background-color: #1877f2;
+}
+
+.social-icon-wrapper .linkedin::after {
+  background-color: #0a66c2;
+}
+
+.social-icon-wrapper .whatsapp::after {
+  background-color: #25d366;
+}
+
+.social-icon-wrapper .phone::after {
+  background-color: #1a1a1a;
+}
+
+.social-icon-wrapper .email::after {
+  background-color: #e4405f;
+}
+
+.social-icon-wrapper .facebook:hover .social-icon-tooltip,
+.social-icon-wrapper .facebook:hover .social-icon-tooltip::before {
+  background: #1877f2;
+  color: #ffffff;
+}
+
+.social-icon-wrapper .linkedin:hover .social-icon-tooltip,
+.social-icon-wrapper .linkedin:hover .social-icon-tooltip::before {
+  background: #0a66c2;
+  color: #ffffff;
+}
+
+.social-icon-wrapper .whatsapp:hover .social-icon-tooltip,
+.social-icon-wrapper .whatsapp:hover .social-icon-tooltip::before {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.social-icon-wrapper .phone:hover .social-icon-tooltip,
+.social-icon-wrapper .phone:hover .social-icon-tooltip::before {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.social-icon-wrapper .email:hover .social-icon-tooltip,
+.social-icon-wrapper .email:hover .social-icon-tooltip::before {
+  background: #e4405f;
+  color: #ffffff;
+}
+
+@keyframes social-bg-pos {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes social-overflow-toggle {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: visible;
+  }
 }
