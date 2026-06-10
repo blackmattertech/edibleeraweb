@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { AboutIntro } from '../components/AboutIntro'
+import { ChallengeScroll } from '../components/ChallengeScroll'
+import { CredentialsStats } from '../components/CredentialsStats'
 import { Hero } from '../components/Hero'
 import { SEO } from '../components/SEO'
 import { ContentSection } from '../components/PageContent'
@@ -20,6 +22,10 @@ export function HomePage() {
       <Hero />
 
       <AboutIntro />
+
+      <CredentialsStats />
+
+      <ChallengeScroll />
 
       <section className="mx-auto max-w-4xl bg-[#FFFFFF] px-6 py-20">
         <h1 className="font-serif text-4xl font-normal text-[#000000] md:text-5xl">

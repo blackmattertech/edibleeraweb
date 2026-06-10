@@ -71,6 +71,13 @@ export function AboutIntro() {
             </Link>
             .
           </p>
+
+          <Link
+            to="/about"
+            className="mt-8 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-transform hover:scale-[1.03]"
+          >
+            Know More
+          </Link>
         </div>
       </div>
     </section>
