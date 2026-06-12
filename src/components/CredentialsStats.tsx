@@ -6,18 +6,18 @@ const stats = [
     suffix: '+',
     label: 'Years in Edible Oils',
     description: [
-      'Deep sector experience across India and Nepal.',
-      'Refining, trading, and FMCG advisory.',
+      'Deep sector experience across the edible oil & fats industry.',
+      'Manufacturing, trading, and FMCG advisory.',
     ],
     highlighted: false,
   },
   {
     target: 100,
     suffix: '+',
-    label: 'Market Intelligence Briefs',
+    label: 'Businesses Advised',
     description: [
-      'Commodity reports, price trackers, and policy updates.',
-      'Delivered to leadership teams every quarter.',
+      'Manufacturers, processors, and allied businesses across edible oils, specialty fats, and FMCG.',
+      'Covering market intelligence, competitive analysis, product positioning, and distribution dynamics.',
     ],
     highlighted: true,
   },
@@ -26,7 +26,7 @@ const stats = [
     suffix: '',
     label: 'Exclusive Sector Focus',
     description: [
-      'Edible oil and fats — nothing else.',
+      'Edible oils & specialty fats — nothing else.',
       'Specialist insight, not generalist consulting.',
     ],
     highlighted: false,
@@ -36,7 +36,7 @@ const stats = [
     suffix: '',
     label: 'Days of Market Tracking',
     description: [
-      'Continuous observation of pricing and trade flows.',
+      'Continuous observation of competitor strategies, trade flows, and distribution dynamics.',
       'Ground-level demand signals, updated daily.',
     ],
     highlighted: false,
