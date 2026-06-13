@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+
+import { BRAND_SECTION_GREEN } from '@/config/colors'
+import { imagekitUrl } from '@/config/imagekit'
 import { useScrollStraighten } from '../hooks/useScrollStraighten'
 import { ClientGainPanel } from './ClientGainPanel'
 import { ProcessSteps } from './ProcessSteps'
@@ -36,12 +39,11 @@ type ChallengeSection = {
 }
 
 const problemCardsSlideOne = [
-  'Limited visibility on real market demand',
-  'Rapid shifts in competitor pricing & schemes',
-  'Pricing pressure from volatile raw material costs',
-  'Product-channel misalignment hurting margins',
-  'Distribution gaps that are invisible from the top',
-  'Decisions made on outdated or incomplete data',
+  'Market Reach Without Market Penetration',
+  'Wrong Distribution Partnerships',
+  'Internal Teams Not Aligned With Business Goals',
+  'Marketing Investment Without Sales Conversion',
+  'Business Growth Dependent on Individuals Instead of Systems',
 ]
 
 const deliverCardsSlideTwo = [
@@ -53,24 +55,29 @@ const deliverCardsSlideTwo = [
   'Management Advisory & Planning Support',
 ]
 
+const processVideo = {
+  src: imagekitUrl('process.mp4'),
+  alt: 'Edible oil production and delivery process',
+}
+
 const sections: ChallengeSection[] = [
   {
     id: 'challenge-01',
     label: '01 — Industry challenges',
     heading: ['Your market is moving.', 'Is your strategy?'],
     body: [
-      'Edible oil businesses face a market that shifts faster than most leadership teams can track. Competitor pricing changes overnight. Trade schemes evolve weekly. Distribution gaps compound silently.',
+      'Edible oil businesses face a market that shifts faster than most leadership teams can track. Competitor strategies change overnight. Trade schemes evolve weekly. Distribution gaps compound silently.',
       'We give management teams the clarity to stay ahead — not react.',
     ],
-    bg: '#3EC45A',
+    bg: BRAND_SECTION_GREEN,
     headingColor: '#FFFFFF',
     bodyColor: '#FFFFFF',
     labelColor: '#FFFFFF',
     cards: problemCardsSlideOne,
     cardsLayout: 'sidebar',
     cardsHeading: [
-      'Six reasons edible oil businesses',
-      'lose margin without knowing why.',
+      'Five challenges holding',
+      'growth back.',
     ],
   },
   {
@@ -81,15 +88,12 @@ const sections: ChallengeSection[] = [
       "We don't offer generic advisory. Every engagement is built around your specific market position, product portfolio, and distribution structure — with one goal: sharper decisions.",
     bg: '#FFFFFF',
     headingColor: '#1a1a1a',
-    bodyColor: '#6F6F6F',
-    labelColor: '#6F6F6F',
+    bodyColor: '#526657',
+    labelColor: '#445549',
     labelUppercase: false,
     cards: deliverCardsSlideTwo,
     cardsLayout: 'below',
-    video: {
-      src: '/process.mp4',
-      alt: 'Edible oil production and delivery process',
-    },
+    video: processVideo,
   },
   {
     id: 'challenge-03',
@@ -97,7 +101,7 @@ const sections: ChallengeSection[] = [
     heading: ['Strategy grounded in', 'ground reality.'],
     body:
       'Most consultants rely on secondary data and spreadsheet models. Our advisory is shaped by continuous, direct observation of how edible oil markets actually behave — pricing, schemes, distribution, and competitor moves tracked daily.',
-    bg: '#3EC45A',
+    bg: BRAND_SECTION_GREEN,
     headingColor: '#FFFFFF',
     bodyColor: '#FFFFFF',
     labelColor: '#FFFFFF',
@@ -113,8 +117,8 @@ const sections: ChallengeSection[] = [
       "Our engagements don't end with a report. They end with a leadership team that sees the market differently — and makes better decisions because of it.",
     bg: '#FFFFFF',
     headingColor: '#1a1a1a',
-    bodyColor: '#6F6F6F',
-    labelColor: '#6F6F6F',
+    bodyColor: '#526657',
+    labelColor: '#445549',
     labelUppercase: false,
     contentGrouped: true,
     sidePanel: true,
@@ -199,19 +203,20 @@ function ChallengePanel({
   const belowCards = section.cards && section.cardsLayout === 'below'
   const hasSideMedia = Boolean(section.image || section.video)
   const hasSidePanel = section.sidePanel === true
+  const isVideoStackedLayout = Boolean(section.video && isStackedLayout)
 
   const cardList = (variant: 'sidebar' | 'below') => (
     <ul
-      className={`grid w-full gap-2 sm:gap-3 ${
+      className={`grid w-full min-w-0 gap-2 sm:gap-3 ${
         variant === 'sidebar'
-          ? 'grid-cols-1 sm:grid-cols-2 lg:gap-4'
+          ? 'grid-cols-1 lg:grid-cols-2 lg:gap-4'
           : 'mt-5 max-w-2xl grid-cols-1 sm:grid-cols-2 lg:mt-6'
       }`}
     >
       {section.cards!.map((card) => (
         <li
           key={card}
-          className={`rounded-xl px-4 py-3 text-xs leading-snug sm:px-5 sm:py-4 sm:text-sm ${
+          className={`min-w-0 rounded-xl px-4 py-3 text-xs leading-snug sm:px-5 sm:py-4 sm:text-sm ${
             variant === 'sidebar'
               ? 'bg-[#FFFFFF] text-[#1a1a1a]'
               : 'bg-brand-green text-[#FFFFFF]'
@@ -227,7 +232,8 @@ function ChallengePanel({
     <section
       ref={ref}
       id={section.id}
-      className="sticky top-0 h-screen w-full overflow-hidden will-change-transform"
+      data-nav-theme={section.bg === BRAND_SECTION_GREEN ? 'dark' : 'light'}
+      className="sticky top-0 min-h-[100dvh] h-auto w-full overflow-x-hidden overflow-y-auto lg:h-screen lg:overflow-hidden will-change-transform"
       style={{
         zIndex: index + 10,
         backgroundColor: section.bg,
@@ -236,33 +242,45 @@ function ChallengePanel({
       }}
       aria-labelledby={`${section.id}-heading`}
     >
-      <div className="relative flex h-full w-full">
+      <div className="relative flex min-h-[100dvh] w-full min-w-0 flex-col lg:min-h-0 lg:h-full lg:flex-row">
         <div
-          className={`flex h-full flex-col px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16 ${
-            isStackedLayout ? 'justify-start' : 'justify-between'
+          className={`flex min-w-0 flex-col px-6 py-8 sm:px-8 sm:py-10 lg:px-16 lg:py-16 ${
+            isStackedLayout ? 'justify-start' : 'justify-start lg:justify-between'
           } ${
             hasSideMedia || sidebarCards || hasSidePanel
-              ? 'w-full lg:w-[60%]'
+              ? isVideoStackedLayout
+                ? 'w-full lg:w-[54%]'
+                : 'w-full lg:w-[60%]'
               : 'w-full'
           }`}
         >
           <p
-            className={`shrink-0 text-xs font-medium tracking-[0.25em] ${
+            className={`shrink-0 text-xs font-medium tracking-[0.25em] lg:mt-10 ${
               section.labelUppercase !== false ? 'uppercase' : 'normal-case'
             }`}
             style={{
               color: section.labelColor,
-              opacity: section.bg === '#3EC45A' ? 0.9 : 1,
+              opacity: section.bg === BRAND_SECTION_GREEN ? 0.9 : 1,
             }}
           >
             {section.label}
           </p>
 
           {isStackedLayout ? (
-            <div className="flex flex-1 flex-col justify-center pt-6 lg:pt-8">
+            <div
+              className={`flex flex-1 flex-col pt-4 lg:pt-8 ${
+                section.id === 'challenge-03'
+                  ? 'justify-start lg:justify-center'
+                  : 'justify-center'
+              }`}
+            >
               <h2
                 id={`${section.id}-heading`}
-                className={`max-w-4xl font-sans text-4xl font-black leading-[0.95] tracking-[-0.02em] sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl ${
+                className={`max-w-4xl font-sans font-black leading-[0.95] tracking-[-0.02em] ${
+                  section.id === 'challenge-03'
+                    ? 'text-3xl md:text-6xl lg:text-6xl xl:text-7xl'
+                    : 'text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl'
+                } ${
                   section.headingUppercase !== false ? 'uppercase' : 'normal-case'
                 }`}
                 style={{ color: section.headingColor }}
@@ -297,7 +315,7 @@ function ChallengePanel({
                 {section.cta && (
                   <Link
                     to={section.cta.href}
-                    className="mt-6 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-transform hover:scale-[1.03]"
+                    className="mt-6 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
                   >
                     {section.cta.label}
                   </Link>
@@ -305,13 +323,24 @@ function ChallengePanel({
               </div>
 
               {belowCards && cardList('below')}
+
+              {section.id === 'challenge-03' && (
+                <div className="mt-auto flex w-full shrink-0 justify-center px-2 pb-2 pt-5 lg:hidden">
+                  <div className="h-[min(56vh,480px)] w-[min(82vw,300px)] overflow-hidden rounded-2xl shadow-lg">
+                    <LoopingPanelVideo
+                      src={processVideo.src}
+                      className="h-full w-full object-cover object-center"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
             <>
-              <div className="my-auto max-w-4xl pt-8">
+              <div className="max-w-4xl pt-4 lg:my-auto lg:pt-8">
                 <h2
                   id={`${section.id}-heading`}
-                  className={`font-sans text-4xl font-black leading-[0.95] tracking-[-0.02em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl ${
+                  className={`font-sans text-3xl font-black leading-[0.95] tracking-[-0.02em] sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl ${
                     section.headingUppercase !== false ? 'uppercase' : 'normal-case'
                   }`}
                   style={{ color: section.headingColor }}
@@ -324,7 +353,7 @@ function ChallengePanel({
                 </h2>
               </div>
 
-              <div className="max-w-xl">
+              <div className="mt-5 max-w-xl lg:mt-0">
                 <div className="space-y-4">
                   {bodyLines.map((line) => (
                     <p
@@ -343,7 +372,7 @@ function ChallengePanel({
                 {section.cta && (
                   <Link
                     to={section.cta.href}
-                    className="mt-6 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-transform hover:scale-[1.03]"
+                    className="mt-6 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
                   >
                     {section.cta.label}
                   </Link>
@@ -354,10 +383,10 @@ function ChallengePanel({
         </div>
 
         {sidebarCards && (
-          <div className="flex w-full items-center px-8 pb-10 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-[40%] lg:px-10 lg:py-16">
-            <div className="w-full">
+          <div className="flex w-full min-w-0 shrink-0 items-center px-6 pb-8 pt-2 sm:px-8 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-[40%] lg:px-10 lg:py-16">
+            <div className="w-full min-w-0">
               {section.cardsHeading && (
-                <h3 className="mb-6 font-sans text-lg font-bold normal-case leading-tight tracking-[-0.01em] text-[#FFFFFF] sm:text-xl lg:mb-8">
+                <h3 className="mb-4 font-sans text-base font-bold normal-case leading-tight tracking-[-0.01em] text-[#FFFFFF] sm:text-lg lg:mb-8 lg:text-xl">
                   {section.cardsHeading.map((line) => (
                     <span key={line} className="block">
                       {line}
@@ -374,7 +403,7 @@ function ChallengePanel({
           <div
             className={`absolute right-0 top-0 hidden h-full w-[40%] lg:block ${
               section.sidePanelVariant === 'green'
-                ? 'bg-[#3EC45A]'
+                ? 'bg-brand-green-dark'
                 : 'bg-[#FFFFFF]'
             }`}
             data-side-panel={section.id}
@@ -386,9 +415,9 @@ function ChallengePanel({
 
         {hasSideMedia &&
           (section.video && isStackedLayout ? (
-            <div className="absolute right-0 top-0 hidden h-full w-[40%] flex-col py-10 pl-6 pr-10 sm:py-14 sm:pr-12 lg:flex lg:py-16 lg:pr-16">
+            <div className="absolute right-0 top-0 hidden h-full w-[46%] flex-col py-10 pl-4 pr-8 sm:py-14 sm:pr-10 lg:flex lg:py-16 lg:pr-12">
               <p
-                className="shrink-0 text-xs font-medium tracking-[0.25em] opacity-0"
+                className="shrink-0 text-xs font-medium tracking-[0.25em] opacity-0 lg:mt-10"
                 aria-hidden="true"
               >
                 {section.label}
@@ -396,7 +425,7 @@ function ChallengePanel({
               <div className="flex min-h-0 flex-1 items-center justify-center pt-6 lg:pt-8">
                 <LoopingPanelVideo
                   src={section.video.src}
-                  className="h-[clamp(450px,63vh,660px)] w-auto max-w-full rounded-2xl object-cover object-center aspect-[9/16]"
+                  className="aspect-[9/16] h-auto w-[clamp(400px,95%,560px)] max-h-[80vh] rounded-2xl object-cover object-center"
                 />
               </div>
             </div>
@@ -428,7 +457,7 @@ function ChallengePanel({
 
 export function ChallengeScroll() {
   return (
-    <div className="relative bg-[#0a0a0a]">
+    <div className="relative overflow-x-hidden bg-[#0a0a0a]">
       {sections.map((section, index) => (
         <ChallengePanel key={section.id} section={section} index={index} />
       ))}

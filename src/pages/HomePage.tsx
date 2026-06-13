@@ -20,9 +20,9 @@ export function HomePage() {
 
       <Hero />
 
-      <AboutIntro />
-
       <CredentialsStats />
+
+      <AboutIntro />
 
       <ChallengeScroll />
 

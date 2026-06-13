@@ -1,17 +1,16 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { Navigation } from './Navigation'
 
 type PageContentProps = {
   children: ReactNode
-  showNav?: boolean
 }
 
-export function PageContent({ children, showNav = true }: PageContentProps) {
+export function PageContent({ children }: PageContentProps) {
   return (
-    <div className="min-h-screen bg-[#FFFFFF]">
-      {showNav && <Navigation />}
-      <main className="mx-auto max-w-4xl px-6 py-16">{children}</main>
+    <div className="min-h-screen bg-[#FFFFFF]" data-nav-theme="light">
+      <main className="mx-auto max-w-4xl px-6 pb-16 pt-[calc(var(--site-header-height)+4rem)] lg:pt-28">
+        {children}
+      </main>
     </div>
   )
 }

@@ -5,7 +5,14 @@
   --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   --color-background: #ffffff;
   --color-section: #ffffff;
-  --color-brand-green: #39b64a;
+  --color-brand-green: #1a5236;
+  --color-brand-main: #1a5236;
+  --color-brand-green-dark: #1a5236;
+  --color-brand-green-darker: #04371e;
+  --color-brand-green-deep: #015123;
+  --color-brand-muted: #526657;
+  --color-brand-muted-dark: #445549;
+  --site-header-height: 5.5rem;
 }
 
 @keyframes fade-rise {
@@ -90,6 +97,10 @@
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.hamburger.hamburger-light .line {
+  stroke: #ffffff;
+}
+
 .hamburger .line-top-bottom {
   stroke-dasharray: 12 63;
 }
@@ -153,6 +164,66 @@
   width: 40px;
   margin: 0 2px;
   font-size: 16px;
+}
+
+.social-icon-wrapper--outline .social-icon {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+  color: #ffffff;
+  margin: 0 4px;
+}
+
+.social-icon-wrapper--outline .social-icon::after {
+  display: none;
+}
+
+.social-icon-wrapper--outline .social-icon:hover {
+  animation: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.social-icon-wrapper--outline .social-icon-tooltip {
+  display: none;
+}
+
+.social-icon-wrapper--premium {
+  gap: 14px;
+}
+
+.social-icon-wrapper--premium .social-icon {
+  height: 48px;
+  width: 48px;
+  margin: 0;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+  color: #ffffff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.social-icon-wrapper--premium .social-icon::after {
+  display: none;
+}
+
+.social-icon-wrapper--premium .social-icon:hover {
+  animation: none;
+  overflow: hidden;
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.social-icon-wrapper--premium .social-icon-tooltip {
+  display: none;
 }
 
 .social-icon-wrapper .social-icon {

@@ -25,8 +25,8 @@ export function GridBackground({
         className={cn(
           'absolute inset-0',
           isDark
-            ? 'bg-[radial-gradient(circle_500px_at_50%_200px,rgba(57,182,74,0.4),transparent)]'
-            : 'bg-[radial-gradient(circle_500px_at_50%_200px,rgba(57,182,74,0.25),transparent)]',
+            ? 'bg-[radial-gradient(circle_500px_at_50%_200px,rgba(26,82,54,0.18),transparent)]'
+            : 'bg-[radial-gradient(circle_500px_at_50%_200px,rgba(26,82,54,0.1),transparent)]',
         )}
       />
     </div>

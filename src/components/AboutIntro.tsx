@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom'
 
+import { imagekitUrl } from '@/config/imagekit'
+
 export function AboutIntro() {
   return (
     <section
       className="w-full bg-[#FFFFFF] font-dm-sans"
+      data-nav-theme="light"
       aria-labelledby="about-intro-heading"
     >
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-stretch lg:gap-16 lg:py-28">
-        <div className="flex justify-center lg:h-full lg:justify-start">
+        <div className="hidden justify-center lg:flex lg:h-full lg:justify-start">
           <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border border-[#000000]/10 lg:h-full lg:w-auto lg:max-w-none">
             <img
-              src="/profile.png"
-              alt="Asif Haider, Founder of Edible Era — edible oil and fats consulting India"
-              title="Asif Haider — Founder, Edible Era Oil & Fats"
+              src={imagekitUrl('profile.png')}
+              alt="Asif Haider, Founder of Edible Era — edible oil and speciality fats consulting India"
+              title="Asif Haider — Founder, Edible Era Oil & Speciality Fats"
               width={1024}
               height={1536}
               loading="lazy"
@@ -28,7 +31,7 @@ export function AboutIntro() {
 
           <p
             id="about-intro-heading"
-            className="mt-4 font-dm-serif text-4xl font-normal leading-tight text-brand-green md:text-5xl"
+            className="mt-4 font-dm-serif text-4xl font-normal leading-tight text-brand-main md:text-5xl"
           >
             We turn market complexity into business clarity.
           </p>
@@ -36,18 +39,32 @@ export function AboutIntro() {
           <div className="mt-8 space-y-5 text-base leading-relaxed text-[#6F6F6F]">
             <p>
               Edible Era is a consulting firm working exclusively within the
-              edible oil and fats industry. We work with manufacturers,
-              refineries, processors, and allied businesses across India and
-              Nepal — helping leadership teams understand market behaviour,
+              edible oil and speciality fats industry. We work with manufacturers,
+              refineries, processors, and allied businesses across global
+              markets — helping leadership teams understand market behaviour,
               align products to the right channels, and make decisions with
               confidence.
             </p>
             <p>
               Our work is built on continuous market observation — tracking
-              competitor pricing, trade schemes, distribution shifts, and demand
-              patterns on the ground, every day. We translate that into
+              competitor activity, trade dynamics, distribution shifts, and
+              demand patterns on the ground, every day. We translate that into
               strategic inputs your leadership team can actually act on.
             </p>
+          </div>
+
+          <div className="mt-10 flex justify-center lg:hidden">
+            <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border border-[#000000]/10">
+              <img
+                src={imagekitUrl('profile.png')}
+                alt="Asif Haider, Founder of Edible Era — edible oil and speciality fats consulting India"
+                title="Asif Haider — Founder, Edible Era Oil & Speciality Fats"
+                width={1024}
+                height={1536}
+                loading="lazy"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
           </div>
 
           <blockquote className="mt-10 border-l-4 border-brand-green py-1 pl-6">
@@ -74,7 +91,7 @@ export function AboutIntro() {
 
           <Link
             to="/about"
-            className="mt-8 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-transform hover:scale-[1.03]"
+            className="mt-8 inline-flex w-fit rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
           >
             Know More
           </Link>

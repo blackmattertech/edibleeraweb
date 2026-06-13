@@ -97,8 +97,8 @@ export function StickyScrollCardsSection({
                     className={cn(
                       'sticky mb-16 grid grid-cols-1 items-center gap-4 rounded-3xl p-8 md:grid-cols-2 md:gap-8 md:p-12',
                       isGreen
-                        ? 'bg-brand-green shadow-[0_4px_20px_rgba(57,182,74,0.2)]'
-                        : 'border border-[#000000]/10 bg-[#FFFFFF] shadow-[0_4px_24px_rgba(0,0,0,0.06)]',
+                        ? 'bg-brand-green-dark shadow-[0_4px_20px_rgba(26,82,54,0.25)]'
+                        : 'border border-brand-muted/20 bg-[#FFFFFF] shadow-[0_4px_24px_rgba(0,0,0,0.06)]',
                     )}
                     style={{ top: `${stickyTop}px` }}
                   >
@@ -124,7 +124,7 @@ export function StickyScrollCardsSection({
                       <p
                         className={cn(
                           'mt-4 text-sm leading-relaxed sm:text-base',
-                          isGreen ? 'text-[#FFFFFF]/85' : 'text-[#6F6F6F]',
+                          isGreen ? 'text-[#FFFFFF]/85' : 'text-brand-muted',
                         )}
                       >
                         {card.description}

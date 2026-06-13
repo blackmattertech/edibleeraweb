@@ -122,18 +122,24 @@ const iconMap = {
 type SocialIconButtonsProps = {
   className?: string
   compact?: boolean
+  variant?: 'default' | 'outline' | 'premium'
 }
 
 export function SocialIconButtons({
   className,
   compact = false,
+  variant = 'default',
 }: SocialIconButtonsProps) {
   return (
     <ul
       className={cn(
         'social-icon-wrapper inline-flex list-none items-center justify-center',
         compact && 'social-icon-wrapper--compact',
-        compact ? 'h-auto gap-0 p-0' : 'h-[120px] w-full gap-0 pt-10',
+        variant === 'outline' && 'social-icon-wrapper--outline',
+        variant === 'premium' && 'social-icon-wrapper--premium',
+        compact || variant === 'premium'
+          ? 'h-auto gap-0 p-0'
+          : 'h-[120px] w-full gap-0 pt-10',
         className,
       )}
     >

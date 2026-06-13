@@ -77,7 +77,7 @@ function buildArticleSchema(
     keywords: article.keywords,
     about: {
       '@type': 'Thing',
-      name: 'Edible Oil and Fats Industry India',
+      name: 'Edible Oil and Speciality Fats Industry India',
     },
   }
 }

@@ -47,7 +47,7 @@ export const insightPillars: Record<string, InsightPillar> = {
           {
             title: 'Refining and downstream conversion',
             content:
-              'Indian refiners convert imported crude palm oil into RBD palm olein, stearin, and specialty fractions used across the broader fats and oils industry.',
+              'Indian refiners convert imported crude palm oil into RBD palm olein, stearin, and specialty fractions used across the broader speciality fats and oils industry.',
           },
         ],
       },
@@ -110,7 +110,7 @@ export const insightPillars: Record<string, InsightPillar> = {
       {
         question: 'What is Edible Era\'s focus area?',
         answer:
-          'Edible Era is a market intelligence and strategy consulting firm focused exclusively on the edible oil and fats sector in India and Nepal. Contact: info@edibleera.in',
+          'Edible Era is a market intelligence and strategy consulting firm focused exclusively on the edible oil and speciality fats sector in India and Nepal. Contact: info@edibleera.in',
       },
     ],
     internalLinks: [
@@ -430,7 +430,7 @@ export const insightPillars: Record<string, InsightPillar> = {
     title: 'Rice Bran Oil India',
     metaTitle: 'Rice Bran Oil Market India — Demand Trends | Edible Era',
     metaDescription:
-      'Rice bran oil market India with food processing demand, refining economics, health-positioned retail growth, and 2025 industry outlook for fats sector investors.',
+      'Rice bran oil market India with food processing demand, refining economics, health-positioned retail growth, and 2025 industry outlook for speciality fats sector investors.',
     h1: 'Rice Bran Oil Market India: Demand, Refining & Industry Trends',
     intro:
       'Rice bran oil market India benefits from abundant rice milling byproducts and rising health-oriented consumption. Edible Era analyses rice bran oil food processing India uptake, refinery investments, and competitive positioning against sunflower and soybean oils.',
@@ -741,7 +741,7 @@ export const additionalInsights = [
   },
   {
     slug: 'vanaspati-india',
-    title: 'Vanaspati and Hydrogenated Fats India',
+    title: 'Vanaspati and Hydrogenated Speciality Fats India',
     description:
       'Vanaspati market decline India trends with trans fat regulation impact and bakery sector substitution patterns.',
   },

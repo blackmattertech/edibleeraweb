@@ -46,7 +46,7 @@ function renderHeadingLine(line: string, highlightedWord?: string) {
   return (
     <>
       {before}
-      <span className="text-brand-green">{highlightedWord}</span>
+      <span className="text-brand-main">{highlightedWord}</span>
       {after}
     </>
   )
@@ -77,7 +77,7 @@ export function SectionIntroHeader({
         <p
           className={cn(
             'text-xs font-medium uppercase tracking-[0.3em] transition-all duration-1000 ease-out sm:text-sm',
-            isDark ? 'text-[#FFFFFF]/60' : 'text-[#6F6F6F]',
+            isDark ? 'text-[#FFFFFF]/60' : 'text-brand-muted',
             sectionInView
               ? 'translate-y-0 opacity-100'
               : 'translate-y-8 opacity-0',
@@ -111,7 +111,7 @@ export function SectionIntroHeader({
       <p
         className={cn(
           'mx-auto mt-8 max-w-3xl leading-relaxed transition-all duration-1000 ease-out',
-          isDark ? 'text-[#FFFFFF]/75' : 'text-[#6F6F6F]',
+          isDark ? 'text-[#FFFFFF]/75' : 'text-brand-muted',
           fullPageIntro
             ? 'text-lg sm:mt-10 sm:text-xl md:text-2xl'
             : 'mt-5 max-w-2xl text-base sm:text-lg',

@@ -19,7 +19,7 @@ export function MarketsPage() {
 
       <PageHeading
         title="Edible Oil Markets Across India & Nepal"
-        intro="Country-level market overviews connecting consumption patterns, import dependency, and policy context for South Asia's oils and fats sector."
+        intro="Country-level market overviews connecting consumption patterns, import dependency, and policy context for South Asia's oils and speciality fats sector."
       />
 
       <ContentSection title="Market Coverage">

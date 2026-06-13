@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { SocialIconButtons } from '@/components/ui/social-icon-buttons'
+import { imagekitUrl } from '@/config/imagekit'
 import { serviceSlugs } from '../data/services'
 import { SITE_EMAIL, SITE_PHONE, SITE_URL } from '../config/site'
 
@@ -19,7 +20,7 @@ const footerKeywords = [
   { label: 'Soybean oil market data', to: '/insights' },
   { label: 'Edible oil price volatility', to: '/insights/price-volatility' },
   { label: 'Refining margins India', to: '/insights/refining-margins' },
-  { label: 'Edible fats consulting', to: '/services' },
+  { label: 'Edible speciality fats consulting', to: '/services' },
 ]
 
 const linkClass = 'transition-colors hover:text-[#000000]'
@@ -31,7 +32,7 @@ export function Footer() {
         <div className="sm:col-span-2 lg:col-span-2">
           <img
             src="/favicon.svg"
-            alt="Edible Era Oil & Fats logo"
+            alt="Edible Era Oil & Speciality Fats logo"
             width={90}
             height={90}
             className="h-[90px] w-[90px]"
@@ -137,7 +138,7 @@ export function Footer() {
 
       <div className="mx-auto mt-10 max-w-7xl space-y-2 text-center text-xs">
         <p className="text-[#6F6F6F]">
-          © {new Date().getFullYear()} Edible Era Oil & Fats. All rights reserved.
+          © {new Date().getFullYear()} Edible Era Oil & Speciality Fats. All rights reserved.
         </p>
         <p className="flex flex-wrap items-center justify-center gap-2 text-[#000000]">
           <span>Website designed by:</span>
@@ -149,7 +150,7 @@ export function Footer() {
             aria-label="BlackMatter Technologies Pvt. Ltd."
           >
             <img
-              src="/answers/balckmatter-01.svg"
+              src={imagekitUrl('answers/balckmatter-01.svg')}
               alt="BlackMatter Technologies"
               width={160}
               height={38}

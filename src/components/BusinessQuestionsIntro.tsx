@@ -25,11 +25,11 @@ export function BusinessQuestionsIntro() {
           autoplay
           colors={{
             name: '#1a1a1a',
-            designation: '#6F6F6F',
-            testimony: '#6F6F6F',
+            designation: '#526657',
+            testimony: '#526657',
             arrowBackground: '#1a1a1a',
             arrowForeground: '#FFFFFF',
-            arrowHoverBackground: '#39b64a',
+            arrowHoverBackground: '#1A5236',
           }}
           fontSizes={{
             name: 'clamp(1.25rem, 2.5vw, 1.75rem)',

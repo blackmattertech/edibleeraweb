@@ -41,7 +41,7 @@ export function InsightArticlePage() {
       <ContentSection title="Market Overview">
         <p>
           Edible Era Research Team publishes India and Nepal-focused analysis on
-          the oils and fats industry, connecting commodity trends with strategic
+          the oils and speciality fats industry, connecting commodity trends with strategic
           implications for refiners, traders, and investors. This article extends
           our edible oil market research South Asia coverage with actionable
           intelligence for procurement and policy teams.

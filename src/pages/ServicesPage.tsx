@@ -9,7 +9,7 @@ export function ServicesPage() {
     <PageContent>
       <SEO
         title="Edible Oil Consulting Services — India & Nepal | Edible Era"
-        description="Edible oil consulting services across market intelligence, strategy, investment advisory, and policy analysis for India and Nepal oils and fats sector."
+        description="Edible oil consulting services across market intelligence, strategy, investment advisory, and policy analysis for India and Nepal oils and speciality fats sector."
         canonicalPath="/services"
         ogImage={ogImages.services}
         breadcrumbs={[
@@ -20,7 +20,7 @@ export function ServicesPage() {
 
       <PageHeading
         title="Edible Oil Consulting Services for India & Nepal"
-        intro="Edible Era delivers end-to-end advisory for the edible oil and fats industry — from market intelligence and strategy consulting to investment advisory and policy analysis."
+        intro="Edible Era delivers end-to-end advisory for the edible oil and speciality fats industry — from market intelligence and strategy consulting to investment advisory and policy analysis."
       />
 
       <ContentSection title="Service Lines for the Edible Oil Sector">

@@ -9,7 +9,7 @@ export function ReportsPage() {
     <PageContent>
       <SEO
         title="Edible Oil Sector Investor Reports | Edible Era"
-        description="Edible oil sector investor reports and market publications for India and Nepal oils and fats industry stakeholders and institutional investors."
+        description="Edible oil sector investor reports and market publications for India and Nepal oils and speciality fats industry stakeholders and institutional investors."
         canonicalPath="/reports"
         ogImage={ogImages.reports}
         breadcrumbs={[

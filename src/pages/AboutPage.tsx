@@ -8,7 +8,7 @@ export function AboutPage() {
     <PageContent>
       <SEO
         title="Edible Oil Consulting Firm India — About Us | Edible Era"
-        description="Edible oil consulting firm India specialising in oils and fats market intelligence South Asia. Strategy, policy, and investment advisory. www.edibleera.in"
+        description="Edible oil consulting firm India specialising in oils and speciality fats market intelligence South Asia. Strategy, policy, and investment advisory. www.edibleera.in"
         canonicalPath="/about"
         ogImage={ogImages.default}
         breadcrumbs={[
@@ -18,15 +18,15 @@ export function AboutPage() {
       />
 
       <PageHeading
-        title="About Edible Era — Edible Oil & Fats Sector Specialists"
-        intro="Edible Era is a market intelligence and strategy consulting firm focused exclusively on the edible oil and fats sector in India and Nepal."
+        title="About Edible Era — Edible Oil & Speciality Fats Sector Specialists"
+        intro="Edible Era is a market intelligence and strategy consulting firm focused exclusively on the edible oil and speciality fats sector in India and Nepal."
       />
 
-      <ContentSection title="Our Mission in the Oils and Fats Industry">
+      <ContentSection title="Our Mission in the Oils and Speciality Fats Industry">
         <p>
           As an edible oil consulting firm India clients engage for independent
           insight, we help organisations navigate complex commodity cycles,
-          regulatory change, and investment decisions. Our oils and fats market
+          regulatory change, and investment decisions. Our oils and speciality fats market
           intelligence South Asia platform supports refiners, traders, FMCG
           brands, and investors with data-backed recommendations.
         </p>
@@ -45,7 +45,7 @@ export function AboutPage() {
           We maintain primary coverage of India and Nepal, with secondary
           analysis across South Asia. Commodity expertise includes palm oil,
           soybean oil, mustard oil, sunflower oil, rice bran oil, vanaspati,
-          specialty fats, and oleochemicals market India trends.
+          speciality fats, and oleochemicals market India trends.
         </p>
         <p>
           Our analysts combine trade statistics, refinery intelligence, and

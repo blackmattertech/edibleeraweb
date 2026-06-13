@@ -18,7 +18,7 @@ export function ContactPage() {
       />
 
       <PageHeading
-        title="Contact Edible Era — Edible Oil & Fats Market Intelligence"
+        title="Contact Edible Era — Edible Oil & Speciality Fats Market Intelligence"
         intro="Connect with our India and Nepal edible oil consulting team for market intelligence, strategy advisory, investment support, and policy analysis."
       />
 
@@ -48,7 +48,7 @@ export function ContactPage() {
       <ContentSection title="What to Include in Your Enquiry">
         <p>
           Share your commodity interest—palm oil, soybean oil, mustard oil,
-          sunflower oil, rice bran oil, or specialty fats—and whether you require
+          sunflower oil, rice bran oil, or speciality fats—and whether you require
           market intelligence subscriptions, bespoke research, strategy workshops,
           or transaction advisory.
         </p>

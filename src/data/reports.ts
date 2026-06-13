@@ -16,15 +16,15 @@ export const reports: Record<string, Report> = {
     title: 'India Edible Oil Investor Outlook 2025',
     metaTitle: 'India Edible Oil Sector Investor Report 2025 | Edible Era',
     metaDescription:
-      'India edible oil sector investor report 2025 with valuation benchmarks, refinery margin outlook, and M&A themes for oils and fats assets in South Asia.',
+      'India edible oil sector investor report 2025 with valuation benchmarks, refinery margin outlook, and M&A themes for oils and speciality fats assets in South Asia.',
     h1: 'India Edible Oil Sector Investor Report 2025',
     intro:
-      'This India edible oil sector investor report synthesises margin cycles, policy risks, and consolidation themes for private equity, strategic acquirers, and family offices evaluating fats sector exposure.',
+      'This India edible oil sector investor report synthesises margin cycles, policy risks, and consolidation themes for private equity, strategic acquirers, and family offices evaluating speciality fats sector exposure.',
     sections: [
       {
-        title: 'Investment Themes in the Oils and Fats Industry',
+        title: 'Investment Themes in the Oils and Speciality Fats Industry',
         content: [
-          'Refinery consolidation, branded retail expansion, and specialty fats integration remain primary value creation levers.',
+          'Refinery consolidation, branded retail expansion, and speciality fats integration remain primary value creation levers.',
           'Edible oil company valuation India multiples reflect margin normalisation and working capital efficiency improvements post-volatility peaks.',
         ],
       },

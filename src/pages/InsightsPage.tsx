@@ -20,7 +20,7 @@ export function InsightsPage() {
 
       <PageHeading
         title="Edible Oil Market Insights for India & Nepal"
-        intro="Research articles, pillar analyses, and commodity intelligence for the South Asia edible oil and fats sector."
+        intro="Research articles, pillar analyses, and commodity intelligence for the South Asia edible oil and speciality fats sector."
       />
 
       <ContentSection title="Pillar Analyses">

@@ -180,7 +180,7 @@ export function CTAWithVerticalMarquee({
       <div className="flex animate-fade-in-up flex-wrap gap-4 [animation-delay:600ms]">
         <Link
           to={primaryCta.href}
-          className="group relative overflow-hidden rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-[#FFFFFF] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          className="group relative overflow-hidden rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           <span className="relative z-10">{primaryCta.label}</span>
           <div className="absolute inset-0 translate-x-[-200%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[200%]" />

@@ -71,11 +71,11 @@ export function CircularTestimonials({
   className,
 }: CircularTestimonialsProps) {
   const colorName = colors.name ?? '#1a1a1a'
-  const colorDesignation = colors.designation ?? '#6F6F6F'
-  const colorTestimony = colors.testimony ?? '#6F6F6F'
+  const colorDesignation = colors.designation ?? '#526657'
+  const colorTestimony = colors.testimony ?? '#526657'
   const colorArrowBg = colors.arrowBackground ?? '#1a1a1a'
   const colorArrowFg = colors.arrowForeground ?? '#FFFFFF'
-  const colorArrowHoverBg = colors.arrowHoverBackground ?? '#39b64a'
+  const colorArrowHoverBg = colors.arrowHoverBackground ?? '#1A5236'
   const fontSizeName = fontSizes.name ?? '1.5rem'
   const fontSizeDesignation = fontSizes.designation ?? '0.925rem'
   const fontSizeQuote = fontSizes.quote ?? '1.125rem'
@@ -270,7 +270,7 @@ export function CircularTestimonials({
                 'absolute h-full w-full overflow-hidden rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.12)]',
                 testimonial.src || testimonial.cardVariant === 'white'
                   ? 'border border-[#000000]/10 bg-[#FFFFFF]'
-                  : 'bg-brand-green',
+                  : 'bg-brand-green-dark',
               )}
               style={getCardStyle(index)}
             >

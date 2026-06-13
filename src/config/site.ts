@@ -2,7 +2,7 @@ export const SITE_URL = 'https://www.edibleera.in'
 export const SITE_EMAIL = 'info@edibleera.in'
 export const SITE_PHONE = '+918954556644'
 export const SITE_WHATSAPP = 'https://wa.me/918954556644'
-export const SITE_NAME = 'Edible Era Oil & Fats'
+export const SITE_NAME = 'Edible Era Oil & Speciality Fats'
 
 export const organizationSchema = {
   '@context': 'https://schema.org',
@@ -12,7 +12,7 @@ export const organizationSchema = {
   logo: `${SITE_URL}/logo.svg`,
   email: SITE_EMAIL,
   description:
-    'Market intelligence and strategy consulting firm specialising in India and Nepal edible oil and fats sector.',
+    'Market intelligence and strategy consulting firm specialising in India and Nepal edible oil and speciality fats sector.',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'IN',
@@ -23,7 +23,7 @@ export const organizationSchema = {
     'Palm Oil Industry',
     'Soybean Oil Market',
     'Mustard Oil Industry',
-    'Edible Fats Consulting',
+    'Edible Speciality Fats Consulting',
     'Oleochemicals',
     'Nepal Edible Oil Market',
   ],
