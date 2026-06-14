@@ -1,8 +1,15 @@
 import { AboutIntro } from '../components/AboutIntro'
-import { ChallengeScroll } from '../components/ChallengeScroll'
-import { MarketIntelligenceFramework } from '../components/MarketIntelligenceFramework'
+import { ConsultingApproachSection } from '../components/ConsultingApproachSection'
+import { FamiliarChallengesSection } from '../components/FamiliarChallengesSection'
+import { HomeContentSection } from '../components/HomeContentSection'
+import { HowWeSupportSection } from '../components/HowWeSupportSection'
+import { CollaborationEngagementsSection } from '../components/CollaborationEngagementsSection'
+import { PhilosophySection } from '../components/PhilosophySection'
+import { WhatClientsGainSection } from '../components/WhatClientsGainSection'
+import { WhyCompaniesWorkSection } from '../components/WhyCompaniesWorkSection'
 import { CredentialsStats } from '../components/CredentialsStats'
 import { Hero } from '../components/Hero'
+import { CTAWithVerticalMarquee } from '../components/ui/cta-with-text-marquee'
 import { SEO } from '../components/SEO'
 import { ogImages } from '../config/site'
 
@@ -22,11 +29,25 @@ export function HomePage() {
 
       <CredentialsStats />
 
+      <FamiliarChallengesSection />
+
+      <HomeContentSection />
+
+      <HowWeSupportSection />
+
+      <ConsultingApproachSection />
+
+      <WhyCompaniesWorkSection />
+
       <AboutIntro />
 
-      <ChallengeScroll />
+      <WhatClientsGainSection />
 
-      <MarketIntelligenceFramework />
+      <CollaborationEngagementsSection />
+
+      <PhilosophySection />
+
+      <CTAWithVerticalMarquee />
     </>
   )
 }

@@ -7,9 +7,11 @@ export type SectionIntroHeaderProps = {
   heading: string
   headingLines?: string[]
   highlightedHeadingWord?: string
+  highlightedHeadingClassName?: string
   subheading: string
   fullPageIntro?: boolean
   theme?: 'light' | 'dark'
+  className?: string
 }
 
 const useScrollAnimation = <T extends HTMLElement>() => {
@@ -38,7 +40,11 @@ const useScrollAnimation = <T extends HTMLElement>() => {
   return [ref, inView] as const
 }
 
-function renderHeadingLine(line: string, highlightedWord?: string) {
+function renderHeadingLine(
+  line: string,
+  highlightedWord?: string,
+  highlightedClassName = 'text-brand-main',
+) {
   if (!highlightedWord || !line.includes(highlightedWord)) return line
 
   const [before, after] = line.split(highlightedWord)
@@ -46,7 +52,7 @@ function renderHeadingLine(line: string, highlightedWord?: string) {
   return (
     <>
       {before}
-      <span className="text-brand-main">{highlightedWord}</span>
+      <span className={highlightedClassName}>{highlightedWord}</span>
       {after}
     </>
   )
@@ -57,13 +63,18 @@ export function SectionIntroHeader({
   heading,
   headingLines,
   highlightedHeadingWord,
+  highlightedHeadingClassName,
   subheading,
   fullPageIntro = true,
   theme = 'light',
+  className,
 }: SectionIntroHeaderProps) {
   const [sectionRef, sectionInView] = useScrollAnimation<HTMLElement>()
   const lines = headingLines ?? [heading]
   const isDark = theme === 'dark'
+  const highlightClassName =
+    highlightedHeadingClassName ??
+    (isDark ? 'text-[#9FD27C]' : 'text-brand-main')
 
   return (
     <header
@@ -71,6 +82,7 @@ export function SectionIntroHeader({
       className={cn(
         'flex w-full flex-col items-center justify-center px-6 text-center sm:px-8',
         fullPageIntro ? 'min-h-screen' : 'mx-auto mb-16 max-w-3xl',
+        className,
       )}
     >
       {eyebrow && (
@@ -103,7 +115,7 @@ export function SectionIntroHeader({
       >
         {lines.map((line) => (
           <span key={line} className="block">
-            {renderHeadingLine(line, highlightedHeadingWord)}
+            {renderHeadingLine(line, highlightedHeadingWord, highlightClassName)}
           </span>
         ))}
       </h2>
