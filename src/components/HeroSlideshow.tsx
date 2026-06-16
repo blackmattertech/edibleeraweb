@@ -8,6 +8,10 @@ const SLIDE_INTERVAL_MS = 6000
 const SLIDE_FADE_MS = 1200
 const HERO_TRANSFORM = 'w-1920,h-1080,c-at_max,f-auto,q-90'
 
+function slideSrc(path: string, width: number, height: number, quality = 75) {
+  return imagekitUrl(path, `w-${width},h-${height},c-at_max,f-auto,q-${quality}`)
+}
+
 type HeroSlideshowProps = {
   showOverlay?: boolean
   showControls?: boolean
@@ -104,6 +108,7 @@ export function HeroSlideshow({
   transform = HERO_TRANSFORM,
 }: HeroSlideshowProps) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [canAnimate, setCanAnimate] = useState(false)
   const premium = controlVariant === 'premium'
 
   const goTo = useCallback((index: number) => {
@@ -128,6 +133,10 @@ export function HeroSlideshow({
     return () => window.clearInterval(intervalId)
   }, [goNext])
 
+  useEffect(() => {
+    setCanAnimate(true)
+  }, [])
+
   const arrowClass = premium
     ? 'absolute top-1/2 z-10 flex size-[52px] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/25 text-white backdrop-blur-[10px] transition-all hover:bg-black/40'
     : 'absolute top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/60 lg:size-10'
@@ -138,16 +147,19 @@ export function HeroSlideshow({
         <img
           key={slide.path}
           src={imagekitUrl(slide.path, transform)}
+          srcSet={`${slideSrc(slide.path, 480, 300)} 480w, ${slideSrc(slide.path, 720, 450)} 720w, ${slideSrc(slide.path, 960, 600)} 960w`}
+          sizes="(max-width: 1024px) 100vw, 45vw"
           alt={slide.alt}
-          width={720}
-          height={540}
+          width={960}
+          height={600}
           loading={index === 0 ? 'eager' : 'lazy'}
           fetchPriority={index === 0 ? 'high' : 'auto'}
+          decoding="async"
           className={cn(
             'absolute inset-0 size-full object-cover object-center transition-opacity ease-in-out',
             index === activeIndex ? 'opacity-100' : 'opacity-0',
           )}
-          style={{ transitionDuration: `${SLIDE_FADE_MS}ms` }}
+          style={{ transitionDuration: canAnimate ? `${SLIDE_FADE_MS}ms` : '0ms' }}
         />
       ))}
 

@@ -5,7 +5,7 @@ import {
 import { BrandGreenFacetPattern } from '@/components/ui/brand-green-facet-pattern'
 import { HeroSlideshow } from '@/components/HeroSlideshow'
 
-const FEATURED_TRANSFORM = 'w-960,h-1200,c-at_max,f-auto,q-85'
+const FEATURED_TRANSFORM = 'w-960,h-600,c-at_max,f-auto,q-75'
 
 function HeroHeadlineMobile() {
   return (
