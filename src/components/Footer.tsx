@@ -32,7 +32,7 @@ export function Footer() {
         <div className="sm:col-span-2 lg:col-span-2">
           <img
             src="/favicon.svg"
-            alt="Edible Era Oil & Speciality Fats logo"
+            alt="Edible Era Oil & Fats logo"
             width={90}
             height={90}
             className="h-[90px] w-[90px]"
@@ -128,7 +128,7 @@ export function Footer() {
 
       <div className="mx-auto mt-10 max-w-7xl space-y-2 text-center text-xs">
         <p className="text-[#6F6F6F]">
-          © {new Date().getFullYear()} Edible Era Oil & Speciality Fats. All rights reserved.
+          © {new Date().getFullYear()} Edible Era Oil & Fats. All rights reserved.
         </p>
         <p className="flex flex-wrap items-center justify-center gap-2 text-[#000000]">
           <span>Website designed by:</span>

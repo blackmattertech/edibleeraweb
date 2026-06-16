@@ -175,7 +175,7 @@ export function Navigation() {
               <SocialIconButtons compact className="justify-start" />
 
               <p className="mt-6 text-xs uppercase tracking-[0.2em] text-[#6F6F6F]">
-                Edible Era Oil & Speciality Fats
+                Edible Era Oil & Fats
               </p>
               <a
                 href={`mailto:${SITE_EMAIL}`}
