@@ -20,6 +20,8 @@ type SEOProps = {
   description: string
   canonicalPath: string
   ogImage: string
+  noindex?: boolean
+  preloadImage?: string
   ogType?: string
   breadcrumbs?: BreadcrumbItem[]
   article?: {
@@ -97,11 +99,23 @@ function buildFAQSchema(faqs: FAQItem[]) {
   }
 }
 
+function buildWebPageSchema(title: string, description: string, canonicalUrl: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url: canonicalUrl,
+  }
+}
+
 export function SEO({
   title,
   description,
   canonicalPath,
   ogImage,
+  noindex = false,
+  preloadImage,
   ogType = 'website',
   breadcrumbs,
   article,
@@ -109,7 +123,7 @@ export function SEO({
   includeWebsiteSchema = false,
 }: SEOProps) {
   const canonicalUrl = `${SITE_URL}${canonicalPath}`
-  const schemas: object[] = [organizationSchema]
+  const schemas: object[] = [organizationSchema, buildWebPageSchema(title, description, canonicalUrl)]
 
   if (includeWebsiteSchema) {
     schemas.push(websiteSchema)
@@ -131,6 +145,7 @@ export function SEO({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex ? <meta name="robots" content="noindex, nofollow" /> : null}
       <link rel="canonical" href={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -141,6 +156,7 @@ export function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      {preloadImage ? <link rel="preload" as="image" href={preloadImage} /> : null}
       <script type="application/ld+json">
         {JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)}
       </script>

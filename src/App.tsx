@@ -6,6 +6,7 @@ import { InsightSlugPage } from './pages/InsightSlugPage'
 import { MarketIndiaPage } from './pages/MarketIndiaPage'
 import { MarketNepalPage } from './pages/MarketNepalPage'
 import { MarketsPage } from './pages/MarketsPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 import { ReportDetailPage } from './pages/ReportDetailPage'
 import { ReportsPage } from './pages/ReportsPage'
 import { ServiceDetailPage } from './pages/ServiceDetailPage'
@@ -25,6 +26,7 @@ function App() {
         <Route path="markets/nepal" element={<MarketNepalPage />} />
         <Route path="reports" element={<ReportsPage />} />
         <Route path="reports/:slug" element={<ReportDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   )
