@@ -108,7 +108,13 @@ export function CTABlock({
       <h2 className="font-serif text-2xl text-[#000000]">{title}</h2>
       <p className="mx-auto mt-4 max-w-xl text-[#6F6F6F]">{description}</p>
       {isExternalLink ? (
-        <a href={linkTo} className={linkClassName}>
+        <a
+          href={linkTo}
+          className={linkClassName}
+          {...(linkTo.startsWith('http')
+            ? { target: '_blank', rel: 'noopener noreferrer' }
+            : {})}
+        >
           {linkText}
         </a>
       ) : (

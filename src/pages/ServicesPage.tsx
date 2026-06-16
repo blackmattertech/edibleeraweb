@@ -21,7 +21,7 @@ import {
 } from 'lucide-react'
 import { SEO } from '../components/SEO'
 import { imagekitUrl } from '../config/imagekit'
-import { ogImages, SITE_PHONE } from '../config/site'
+import { ogImages, SITE_WHATSAPP } from '../config/site'
 
 const servicesHeroBullets = [
   { label: 'Market Size & Growth Analysis', icon: BarChart3 },
@@ -250,7 +250,9 @@ export function ServicesPage() {
                 </div>
 
                 <a
-                  href={`tel:${SITE_PHONE}`}
+                  href={SITE_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-7 inline-flex items-center gap-3 rounded-lg border border-[#9FD27C]/50 px-5 py-3 text-sm font-medium tracking-wide text-white transition-colors hover:bg-[#9FD27C]/10"
                 >
                   Request A Consultation
@@ -320,7 +322,9 @@ export function ServicesPage() {
               </div>
 
               <a
-                href={`tel:${SITE_PHONE}`}
+                href={SITE_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center gap-3 rounded-lg border border-[#1a1a1a]/30 px-5 py-3 text-sm font-medium tracking-wide text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a]/5"
               >
                 Request A Consultation
@@ -451,7 +455,9 @@ export function ServicesPage() {
               </div>
 
               <a
-                href={`tel:${SITE_PHONE}`}
+                href={SITE_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-3 rounded-lg border border-[#9FD27C]/50 px-5 py-3 text-sm font-medium tracking-wide text-white transition-colors hover:bg-[#9FD27C]/10 lg:mt-0"
               >
                 Request A Consultation
@@ -535,7 +541,9 @@ export function ServicesPage() {
             </div>
 
             <a
-              href={`tel:${SITE_PHONE}`}
+              href={SITE_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-3 rounded-lg bg-brand-green px-5 py-3 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-90 lg:mt-0"
             >
               Request A Consultation
@@ -584,7 +592,9 @@ export function ServicesPage() {
               </p>
 
               <a
-                href={`tel:${SITE_PHONE}`}
+                href={SITE_WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center gap-3 rounded-lg border border-[#9FD27C]/50 px-5 py-3 text-sm font-medium tracking-wide text-white transition-colors hover:bg-[#9FD27C]/10"
               >
                 Request A Consultation

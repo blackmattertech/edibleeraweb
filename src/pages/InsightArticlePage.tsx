@@ -6,7 +6,7 @@ import {
   PageContent,
   PageHeading,
 } from '../components/PageContent'
-import { ogImages, SITE_EMAIL } from '../config/site'
+import { ogImages, SITE_WHATSAPP } from '../config/site'
 import { additionalInsights } from '../data/insights'
 
 export function InsightArticlePage() {
@@ -76,7 +76,7 @@ export function InsightArticlePage() {
       <CTABlock
         title="Access full research"
         description="Contact our team for comprehensive datasets, custom dashboards, and advisory support."
-        linkTo={`mailto:${SITE_EMAIL}`}
+        linkTo={SITE_WHATSAPP}
         linkText="Contact Edible Era research team"
       />
     </PageContent>

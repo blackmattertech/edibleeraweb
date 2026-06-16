@@ -112,11 +112,7 @@ export function Footer() {
                 {SITE_EMAIL}
               </a>
             </li>
-            <li>
-              <a href={`tel:${SITE_PHONE}`} className={linkClass}>
-                {SITE_PHONE}
-              </a>
-            </li>
+            <li>{SITE_PHONE}</li>
             <li>
               <a href={SITE_URL} className={linkClass}>
                 www.edibleera.in

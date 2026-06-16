@@ -2,7 +2,7 @@ import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
-import { SITE_EMAIL } from '@/config/site'
+import { SITE_WHATSAPP } from '@/config/site'
 
 interface VerticalMarqueeProps {
   children: ReactNode
@@ -112,7 +112,13 @@ function CtaButton({
 }) {
   if (isExternalHref(href)) {
     return (
-      <a href={href} className={className}>
+      <a
+        href={href}
+        className={className}
+        {...(href.startsWith('http')
+          ? { target: '_blank', rel: 'noopener noreferrer' }
+          : {})}
+      >
         {children}
       </a>
     )
@@ -130,7 +136,7 @@ export function CTAWithVerticalMarquee({
   subheading =
     'Turn market complexity into clarity through actionable intelligence, distribution insight, and practical growth strategy.',
   marqueeItems = defaultMarqueeItems,
-  primaryCta = { label: 'Contact Us', href: `mailto:${SITE_EMAIL}` },
+  primaryCta = { label: 'Contact Us', href: SITE_WHATSAPP },
   secondaryCta = { label: 'Our Services', href: '/services' },
   marqueeOnLeft = false,
 }: CTAWithVerticalMarqueeProps) {
