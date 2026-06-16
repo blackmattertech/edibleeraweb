@@ -18,8 +18,11 @@ export const collaborationEngagementsHighlights = [
   },
 ] as const
 
-export const collaborationEngagementsVideo = {
-  src: 'https://ik.imagekit.io/3dgbduo8k/video1.mp4',
+import { imagekitUrl } from '@/config/imagekit'
+
+export const collaborationEngagementsImage = {
+  src: imagekitUrl('final (1).png', 'w-1200,f-auto,q-90'),
+  alt: 'Business professionals collaborating on edible oil market strategy and partnerships',
 }
 
 export type CollaborationEngagementsIcon =
