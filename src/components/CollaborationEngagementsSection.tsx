@@ -7,8 +7,8 @@ import {
 
 import {
   collaborationEngagementsHighlights,
-  collaborationEngagementsImage,
   collaborationEngagementsParagraphs,
+  collaborationEngagementsVideo,
   type CollaborationEngagementsIcon,
 } from '@/data/collaborationEngagements'
 
@@ -86,13 +86,19 @@ export function CollaborationEngagementsSection() {
             </div>
           </div>
 
-          <div className="min-w-0 max-lg:-mx-5 max-lg:-mt-5 max-lg:w-[calc(100%+2.5rem)] sm:max-lg:-mx-6 sm:max-lg:w-[calc(100%+3rem)] lg:relative lg:-ml-8 lg:-mt-12 lg:w-full xl:-ml-10">
-            <img
-              src={collaborationEngagementsImage.src}
-              alt={collaborationEngagementsImage.alt}
-              loading="lazy"
-              className="mx-auto block h-auto w-full max-w-full object-contain object-center lg:mx-0 lg:-mt-5 lg:w-[112%] lg:max-w-none lg:origin-top-left lg:object-left"
-            />
+          <div className="min-w-0 max-lg:mt-2 lg:relative lg:-ml-2 lg:mt-2 lg:w-full">
+            <div className="mx-auto aspect-square w-full max-w-[22rem] overflow-hidden rounded-full border border-[#9FD27C]/30 lg:mx-0 lg:max-w-[34rem]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+                className="h-full w-full object-cover object-center"
+              >
+                <source src={collaborationEngagementsVideo.src} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </div>

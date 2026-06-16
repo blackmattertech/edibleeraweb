@@ -14,7 +14,7 @@ export function PillarInsightPage() {
   const { slug } = useParams()
   const pillar = slug ? insightPillars[slug] : undefined
 
-  if (!pillar) return <Navigate to="/insights" replace />
+  if (!pillar) return <Navigate to="/" replace />
 
   return (
     <PageContent>
@@ -26,7 +26,6 @@ export function PillarInsightPage() {
         ogType="article"
         breadcrumbs={[
           { name: 'Home', path: '/' },
-          { name: 'Insights', path: '/insights' },
           { name: pillar.title, path: `/insights/${pillar.slug}` },
         ]}
         article={{

@@ -6,7 +6,7 @@ import {
   PageContent,
   PageHeading,
 } from '../components/PageContent'
-import { ogImages } from '../config/site'
+import { ogImages, SITE_EMAIL } from '../config/site'
 
 export function MarketNepalPage() {
   return (
@@ -89,7 +89,7 @@ export function MarketNepalPage() {
       <CTABlock
         title="Nepal market advisory"
         description="Engage Edible Era for Nepal-focused trade intelligence and market entry support."
-        linkTo="/contact"
+        linkTo={`mailto:${SITE_EMAIL}`}
         linkText="Contact Nepal market advisory team"
       />
     </PageContent>

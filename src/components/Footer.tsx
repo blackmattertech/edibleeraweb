@@ -17,7 +17,7 @@ const footerKeywords = [
   { label: 'Nepal edible oil market', to: '/markets/nepal' },
   { label: 'Palm oil import trends', to: '/insights/palm-oil-india' },
   { label: 'Mustard oil industry', to: '/insights/mustard-oil-india' },
-  { label: 'Soybean oil market data', to: '/insights' },
+  { label: 'Soybean oil market data', to: '/insights/soybean-oil-india' },
   { label: 'Edible oil price volatility', to: '/insights/price-volatility' },
   { label: 'Refining margins India', to: '/insights/refining-margins' },
   { label: 'Edible speciality fats consulting', to: '/services' },
@@ -68,11 +68,6 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-medium text-[#000000]">Explore</h2>
           <ul className="mt-4 space-y-2 text-sm text-[#6F6F6F]">
-            <li>
-              <Link to="/insights" className={linkClass}>
-                India edible oil market insights
-              </Link>
-            </li>
             <li>
               <Link to="/markets/india" className={linkClass}>
                 India edible oil market overview
@@ -126,11 +121,6 @@ export function Footer() {
               <a href={SITE_URL} className={linkClass}>
                 www.edibleera.in
               </a>
-            </li>
-            <li>
-              <Link to="/contact" className={linkClass}>
-                Contact Edible Era
-              </Link>
             </li>
           </ul>
         </div>

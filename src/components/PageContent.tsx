@@ -3,12 +3,22 @@ import { Link } from 'react-router-dom'
 
 type PageContentProps = {
   children: ReactNode
+  includeHeaderOffset?: boolean
 }
 
-export function PageContent({ children }: PageContentProps) {
+export function PageContent({
+  children,
+  includeHeaderOffset = true,
+}: PageContentProps) {
   return (
     <div className="min-h-screen bg-[#FFFFFF]" data-nav-theme="light">
-      <main className="mx-auto max-w-4xl px-6 pb-16 pt-[calc(var(--site-header-height)+4rem)] lg:pt-28">
+      <main
+        className={`mx-auto max-w-4xl px-6 pb-16 ${
+          includeHeaderOffset
+            ? 'pt-[calc(var(--site-header-height)+4rem)] lg:pt-28'
+            : 'pt-0'
+        }`}
+      >
         {children}
       </main>
     </div>
@@ -86,16 +96,26 @@ export function CTABlock({
   linkTo: string
   linkText: string
 }) {
+  const linkClassName =
+    'mt-6 inline-block rounded-full bg-[#000000] px-10 py-4 text-sm text-[#FFFFFF] transition-transform hover:scale-[1.03]'
+  const isExternalLink =
+    linkTo.startsWith('mailto:') ||
+    linkTo.startsWith('tel:') ||
+    linkTo.startsWith('http')
+
   return (
     <section className="mt-12 rounded-2xl bg-[#F7F7F7] px-8 py-10 text-center">
       <h2 className="font-serif text-2xl text-[#000000]">{title}</h2>
       <p className="mx-auto mt-4 max-w-xl text-[#6F6F6F]">{description}</p>
-      <Link
-        to={linkTo}
-        className="mt-6 inline-block rounded-full bg-[#000000] px-10 py-4 text-sm text-[#FFFFFF] transition-transform hover:scale-[1.03]"
-      >
-        {linkText}
-      </Link>
+      {isExternalLink ? (
+        <a href={linkTo} className={linkClassName}>
+          {linkText}
+        </a>
+      ) : (
+        <Link to={linkTo} className={linkClassName}>
+          {linkText}
+        </Link>
+      )}
     </section>
   )
 }

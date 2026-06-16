@@ -1,8 +1,15 @@
 import { cn } from '@/lib/utils'
-import { SITE_EMAIL, SITE_PHONE, SITE_WHATSAPP } from '@/config/site'
+import {
+  SITE_EMAIL,
+  SITE_FACEBOOK,
+  SITE_INSTAGRAM,
+  SITE_LINKEDIN,
+  SITE_PHONE,
+  SITE_WHATSAPP,
+} from '@/config/site'
 
 type SocialLink = {
-  id: 'facebook' | 'linkedin' | 'whatsapp' | 'phone' | 'email'
+  id: 'facebook' | 'linkedin' | 'instagram' | 'whatsapp' | 'phone' | 'email'
   label: string
   href: string
   external?: boolean
@@ -12,13 +19,19 @@ const socialLinks: SocialLink[] = [
   {
     id: 'facebook',
     label: 'Facebook',
-    href: 'https://www.facebook.com/',
+    href: SITE_FACEBOOK,
     external: true,
   },
   {
     id: 'linkedin',
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/edible-era',
+    href: SITE_LINKEDIN,
+    external: true,
+  },
+  {
+    id: 'instagram',
+    label: 'Instagram',
+    href: SITE_INSTAGRAM,
     external: true,
   },
   {
@@ -83,6 +96,20 @@ function WhatsAppIcon() {
   )
 }
 
+function InstagramIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      height="1.2em"
+      viewBox="0 0 448 512"
+      aria-hidden="true"
+    >
+      <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141m0 189.6c-41.3 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.9-26.9 26.9-14.9 0-26.9-12-26.9-26.9 0-14.9 12-26.9 26.9-26.9 14.9 0 26.9 12 26.9 26.9m76.1 27.3c-1.7-35.3-9.7-66.7-35.6-92.5S354.1 37.2 318.8 35.5c-35.5-2-141.9-2-177.4 0-35.2 1.7-66.7 9.7-92.5 35.5S11.1 128.3 9.4 163.6c-2 35.5-2 141.9 0 177.4 1.7 35.3 9.7 66.7 35.5 92.5s57.3 33.8 92.5 35.5c35.5 2 141.9 2 177.4 0 35.3-1.7 66.7-9.7 92.5-35.5s33.8-57.3 35.6-92.5c2-35.5 2-141.8 0-177.4m-47.8 215.8c-7.7 19.3-22.6 34.2-41.9 41.9-29 11.5-97.8 8.8-132.8 8.8s-103.9 2.7-132.8-8.8c-19.3-7.7-34.2-22.6-41.9-41.9-11.5-29-8.8-97.8-8.8-132.8s-2.7-103.9 8.8-132.8c7.7-19.3 22.6-34.2 41.9-41.9 29-11.5 97.8-8.8 132.8-8.8s103.9-2.7 132.8 8.8c19.3 7.7 34.2 22.6 41.9 41.9 11.5 29 8.8 97.8 8.8 132.8s2.7 103.8-8.8 132.8" />
+    </svg>
+  )
+}
+
 function PhoneIcon() {
   return (
     <svg
@@ -114,6 +141,7 @@ function EmailIcon() {
 const iconMap = {
   facebook: FacebookIcon,
   linkedin: LinkedInIcon,
+  instagram: InstagramIcon,
   whatsapp: WhatsAppIcon,
   phone: PhoneIcon,
   email: EmailIcon,

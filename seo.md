@@ -12,7 +12,7 @@
 **Client:** Edible Era Oil & Fats
 **Type:** B2B Strategy Consulting & Market Intelligence firm
 **Website:** [www.edibleera.in](https://www.edibleera.in)
-**Email:** info@edibleera.in
+**Email:** aasif@edibleera.in
 **Geography:** India + Nepal (primary); South Asia (secondary)
 **Sector:** Edible Oils & Fats — Palm Oil, Soybean Oil, Mustard Oil, Sunflower Oil, Rice Bran Oil
 **Target Audience:** Refiners, Producers, Traders, Institutional Buyers, Policy Teams, Investors
@@ -210,7 +210,7 @@ Strategic intelligence for producers, refiners, and investors. Updated quarterly
 
 Edible oil consulting firm specialising in India and Nepal market strategy. Deep sector
 data, policy analysis, and investment advisory for the oils and fats industry.
-Contact: info@edibleera.in
+Contact: aasif@edibleera.in
 ```
 
 ### 3.4 Canonical URL Rules
@@ -458,7 +458,7 @@ See `src/config/site.ts` for the live Organization schema.
 ### `/contact`
 - **H1:** `Contact Edible Era — Edible Oil & Fats Market Intelligence`
 - **Primary keyword:** edible oil consulting contact India
-- **Include on page:** info@edibleera.in · www.edibleera.in
+- **Include on page:** aasif@edibleera.in · www.edibleera.in
 - **Schema:** Organization + BreadcrumbList
 
 ---
@@ -516,8 +516,8 @@ Every insight/pillar page must follow this structure:
 
 ### 8.4 Contact Information Inclusion
 
-- The `/contact` page must display `info@edibleera.in` as a clickable `mailto:` link
-- Footer across all pages must include: `info@edibleera.in` and `www.edibleera.in`
+- The `/contact` page must display `aasif@edibleera.in` as a clickable `mailto:` link
+- Footer across all pages must include: `aasif@edibleera.in` and `www.edibleera.in`
 - The `/about` and homepage must reference the website URL in body copy at least once
 
 ---
@@ -615,12 +615,12 @@ Complete before going live:
 - [ ] Confirm `robots.txt` is publicly accessible at `https://www.edibleera.in/robots.txt`
 - [ ] Confirm all redirects are 301 (permanent), not 302 (temporary)
 - [ ] Verify no pages return 404 that should exist
-- [ ] Check that `info@edibleera.in` mailto link works on the contact page
+- [ ] Check that `aasif@edibleera.in` mailto link works on the contact page
 
 ---
 
 *End of SEO Master Instructions — Edible Era Oil & Fats*
-*Website: www.edibleera.in · Email: info@edibleera.in*
+*Website: www.edibleera.in · Email: aasif@edibleera.in*
 *Maintained by: BlackMatter Technologies*
 *Last updated: June 2026 · Version: 1.0*
 *Review quarterly or whenever major new pages are added.*

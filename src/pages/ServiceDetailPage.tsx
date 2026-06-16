@@ -6,7 +6,7 @@ import {
   PageContent,
   PageHeading,
 } from '../components/PageContent'
-import { ogImages } from '../config/site'
+import { ogImages, SITE_EMAIL } from '../config/site'
 import { services } from '../data/services'
 
 export function ServiceDetailPage() {
@@ -56,7 +56,7 @@ export function ServiceDetailPage() {
       <CTABlock
         title="Start your engagement"
         description="Speak with Edible Era advisors about intelligence subscriptions or consulting mandates."
-        linkTo="/contact"
+        linkTo={`mailto:${SITE_EMAIL}`}
         linkText="Contact edible oil consulting team"
       />
     </PageContent>

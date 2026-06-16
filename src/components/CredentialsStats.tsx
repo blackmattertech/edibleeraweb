@@ -4,10 +4,9 @@ const stats = [
   {
     target: 16,
     suffix: '+',
-    label: 'Years in Edible Oils',
+    label: 'Years in Edible Oils & Specialty Fats',
     description: [
-      'Deep sector experience across the edible oil and speciality fats industry.',
-      'Manufacturing, refining, processing, and strategic advisory.',
+      'Across edible oils and specialty fats, we have worked closely with manufacturers, refiners, processors, distributors, and brand owners.',
     ],
     highlighted: false,
   },
@@ -16,18 +15,15 @@ const stats = [
     suffix: '+',
     label: 'Businesses Advised',
     description: [
-      'Manufacturers, refineries, processors, and allied businesses across the edible oil and speciality fats industry.',
-      'Covering market intelligence, competitive analysis, product positioning, and distribution dynamics.',
+      'Manufacturers • Refiners • Processors • Brands • Market Intelligence • Distribution • Strategy',
     ],
     highlighted: true,
   },
   {
-    target: 1,
-    suffix: '',
-    label: 'Deep Roots. Broad Reach.',
+    displayValue: 'IN • NP',
+    label: 'India & Nepal Market Coverage',
     description: [
-      'Grounded in edible oils & speciality fats, with growing advisory presence across food manufacturing and commodity-driven industries.',
-      'Specialist thinking applied across sectors.',
+      'Deep understanding of regional edible oil & speciality fats market and distribution structures.',
     ],
     highlighted: false,
   },
@@ -120,7 +116,11 @@ function StatCard({
       />
 
       <p className="font-dm-serif text-5xl font-normal leading-none text-[#FFFFFF] md:text-6xl">
-        <CountUp target={stat.target} suffix={stat.suffix} />
+        {'displayValue' in stat && stat.displayValue ? (
+          <span>{stat.displayValue}</span>
+        ) : (
+          <CountUp target={stat.target!} suffix={stat.suffix ?? ''} />
+        )}
       </p>
 
       <hr className="my-5 border-0 border-t border-[#FFFFFF]/30" />

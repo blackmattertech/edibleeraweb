@@ -315,6 +315,10 @@
   background-color: #0a66c2;
 }
 
+.social-icon-wrapper .instagram::after {
+  background-color: #e4405f;
+}
+
 .social-icon-wrapper .whatsapp::after {
   background-color: #25d366;
 }
@@ -336,6 +340,12 @@
 .social-icon-wrapper .linkedin:hover .social-icon-tooltip,
 .social-icon-wrapper .linkedin:hover .social-icon-tooltip::before {
   background: #0a66c2;
+  color: #ffffff;
+}
+
+.social-icon-wrapper .instagram:hover .social-icon-tooltip,
+.social-icon-wrapper .instagram:hover .social-icon-tooltip::before {
+  background: #e4405f;
   color: #ffffff;
 }
 

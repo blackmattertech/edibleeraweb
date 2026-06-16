@@ -2,6 +2,7 @@ import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
+import { SITE_EMAIL } from '@/config/site'
 
 interface VerticalMarqueeProps {
   children: ReactNode
@@ -92,12 +93,44 @@ export type CTAWithVerticalMarqueeProps = {
   marqueeOnLeft?: boolean
 }
 
+function isExternalHref(href: string) {
+  return (
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:') ||
+    href.startsWith('http')
+  )
+}
+
+function CtaButton({
+  href,
+  className,
+  children,
+}: {
+  href: string
+  className: string
+  children: ReactNode
+}) {
+  if (isExternalHref(href)) {
+    return (
+      <a href={href} className={className}>
+        {children}
+      </a>
+    )
+  }
+
+  return (
+    <Link to={href} className={className}>
+      {children}
+    </Link>
+  )
+}
+
 export function CTAWithVerticalMarquee({
   heading = 'Ready to Lead with Clarity?',
   subheading =
-    'Partner with Edible Era for continuous market intelligence, sharper pricing decisions, and strategy grounded in how edible oil markets actually move.',
+    'Turn market complexity into clarity through actionable intelligence, distribution insight, and practical growth strategy.',
   marqueeItems = defaultMarqueeItems,
-  primaryCta = { label: 'Contact Us', href: '/contact' },
+  primaryCta = { label: 'Contact Us', href: `mailto:${SITE_EMAIL}` },
   secondaryCta = { label: 'Our Services', href: '/services' },
   marqueeOnLeft = false,
 }: CTAWithVerticalMarqueeProps) {
@@ -178,21 +211,21 @@ export function CTAWithVerticalMarquee({
       </p>
 
       <div className="flex animate-fade-in-up flex-wrap gap-4 [animation-delay:600ms]">
-        <Link
-          to={primaryCta.href}
+        <CtaButton
+          href={primaryCta.href}
           className="group relative overflow-hidden rounded-full bg-brand-green px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           <span className="relative z-10">{primaryCta.label}</span>
           <div className="absolute inset-0 translate-x-[-200%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[200%]" />
-        </Link>
+        </CtaButton>
 
-        <Link
-          to={secondaryCta.href}
+        <CtaButton
+          href={secondaryCta.href}
           className="group relative overflow-hidden rounded-full border border-[#000000]/15 bg-[#FFFFFF] px-8 py-3.5 text-sm font-medium text-[#1a1a1a] transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           <span className="relative z-10">{secondaryCta.label}</span>
           <div className="absolute inset-0 translate-x-[-200%] bg-gradient-to-r from-transparent via-[#000000]/10 to-transparent transition-transform duration-700 group-hover:translate-x-[200%]" />
-        </Link>
+        </CtaButton>
       </div>
     </div>
   )

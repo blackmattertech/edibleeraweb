@@ -6,14 +6,14 @@ import {
   PageContent,
   PageHeading,
 } from '../components/PageContent'
-import { ogImages } from '../config/site'
+import { ogImages, SITE_EMAIL } from '../config/site'
 import { additionalInsights } from '../data/insights'
 
 export function InsightArticlePage() {
   const { slug } = useParams()
   const article = additionalInsights.find((item) => item.slug === slug)
 
-  if (!article) return <Navigate to="/insights" replace />
+  if (!article) return <Navigate to="/" replace />
 
   return (
     <PageContent>
@@ -25,7 +25,6 @@ export function InsightArticlePage() {
         ogType="article"
         breadcrumbs={[
           { name: 'Home', path: '/' },
-          { name: 'Insights', path: '/insights' },
           { name: article.title, path: `/insights/${article.slug}` },
         ]}
         article={{
@@ -77,7 +76,7 @@ export function InsightArticlePage() {
       <CTABlock
         title="Access full research"
         description="Contact our team for comprehensive datasets, custom dashboards, and advisory support."
-        linkTo="/contact"
+        linkTo={`mailto:${SITE_EMAIL}`}
         linkText="Contact Edible Era research team"
       />
     </PageContent>

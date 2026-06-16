@@ -110,7 +110,7 @@ export const insightPillars: Record<string, InsightPillar> = {
       {
         question: 'What is Edible Era\'s focus area?',
         answer:
-          'Edible Era is a market intelligence and strategy consulting firm focused exclusively on the edible oil and speciality fats sector in India and Nepal. Contact: info@edibleera.in',
+          'Edible Era is a market intelligence and strategy consulting firm focused exclusively on the edible oil and speciality fats sector in India and Nepal. Contact: aasif@edibleera.in',
       },
     ],
     internalLinks: [
@@ -211,7 +211,7 @@ export const insightPillars: Record<string, InsightPillar> = {
       {
         question: 'Where can investors access soybean oil market data?',
         answer:
-          'Edible Era publishes soybean oil market intelligence through reports and advisory engagements. Contact info@edibleera.in for access.',
+          'Edible Era publishes soybean oil market intelligence through reports and advisory engagements. Contact aasif@edibleera.in for access.',
       },
     ],
     internalLinks: [

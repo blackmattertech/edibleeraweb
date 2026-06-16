@@ -17,7 +17,7 @@ export const heroFeatured: HeroFeatured = {
   title:
     'Aligning distribution, pricing, and growth strategy across India\'s edible oil sector',
   date: 'March 2026',
-  href: '/insights',
+  href: '/reports',
   imagePath: 'heroslideshow/1',
   imageAlt: 'Global edible oil market intelligence and strategic analytics',
 }

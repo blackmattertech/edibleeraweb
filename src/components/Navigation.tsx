@@ -4,15 +4,13 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { SocialIconButtons } from '@/components/ui/social-icon-buttons'
 import { BrandGreenFacetPattern } from '@/components/ui/brand-green-facet-pattern'
-import { SITE_PHONE } from '@/config/site'
+import { SITE_EMAIL, SITE_PHONE } from '@/config/site'
 import { cn } from '@/lib/utils'
 
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Insights', href: '/insights' },
-  { label: 'Contact Us', href: '/contact' },
 ]
 
 const HEADER_GRADIENT =
@@ -180,10 +178,10 @@ export function Navigation() {
                 Edible Era Oil & Speciality Fats
               </p>
               <a
-                href="mailto:info@edibleera.in"
+                href={`mailto:${SITE_EMAIL}`}
                 className="mt-2 block text-sm text-[#000000] underline"
               >
-                info@edibleera.in
+                {SITE_EMAIL}
               </a>
             </div>
           </aside>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import {
   Handshake,
   Leaf,
@@ -10,7 +11,8 @@ import {
 
 import { BrandGreenFacetPattern } from '@/components/ui/brand-green-facet-pattern'
 import {
-  philosophyHeroImage,
+  philosophyHeroAlt,
+  philosophyHeroSlides,
   philosophyPillars,
   philosophyPrinciples,
   philosophyQuote,
@@ -155,6 +157,16 @@ function PillarItem({
 }
 
 function VisualComposition({ mobile = false }: { mobile?: boolean }) {
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % philosophyHeroSlides.length)
+    }, 3500)
+
+    return () => window.clearInterval(id)
+  }, [])
+
   return (
     <div
       className={`relative w-full ${
@@ -172,16 +184,32 @@ function VisualComposition({ mobile = false }: { mobile?: boolean }) {
         <div className="absolute h-[68%] w-[68%] rounded-full border border-[#9FD27C]/10" />
       </div>
 
-      <img
-        src={philosophyHeroImage.src}
-        alt={philosophyHeroImage.alt}
-        loading="lazy"
-        className={`relative z-10 h-auto w-full object-contain ${
-          mobile
-            ? 'mx-auto -ml-3 max-w-[calc(100%+0.75rem)] object-left sm:-ml-4'
-            : 'mx-auto lg:mx-0 lg:max-w-none lg:pr-4 xl:pr-0'
-        }`}
-      />
+      <div
+        className="absolute inset-0 z-10 flex items-center justify-center"
+        aria-label={philosophyHeroAlt}
+      >
+        <div
+          className={`relative w-full overflow-hidden rounded-3xl ${
+            mobile
+              ? 'max-w-[78%] sm:max-w-[74%]'
+              : 'max-w-[380px] lg:max-w-[440px] xl:max-w-[520px]'
+          }`}
+        >
+          {philosophyHeroSlides.map((slide, index) => (
+            <img
+              key={slide}
+              src={slide}
+              alt={philosophyHeroAlt}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              className={`h-auto w-full object-cover object-center transition-opacity duration-700 ${
+                activeSlide === index
+                  ? 'relative opacity-100'
+                  : 'absolute inset-0 opacity-0'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
@@ -230,7 +258,7 @@ export function PhilosophySection() {
           </div>
         </div>
 
-        <div className="hidden lg:grid lg:grid-cols-[44%_56%] lg:items-start lg:gap-12 xl:gap-16">
+        <div className="hidden lg:grid lg:grid-cols-[44%_56%] lg:items-center lg:gap-12 xl:gap-16">
           <div className="flex flex-col">
             <DesktopQuote />
 
@@ -259,7 +287,7 @@ export function PhilosophySection() {
             </div>
           </div>
 
-          <div className="lg:-mt-2">
+          <div className="flex h-full items-center justify-center">
             <VisualComposition />
           </div>
         </div>

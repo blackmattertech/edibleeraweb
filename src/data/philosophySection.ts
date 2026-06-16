@@ -37,10 +37,15 @@ export const philosophyPillars = [
   },
 ] as const
 
-export const philosophyHeroImage = {
-  src: imagekitUrl('philo', 'w-1600,e-trim,f-auto,q-90'),
-  alt: 'Laptop showing market intelligence dashboard with edible oil products, soybeans, and market intelligence report',
-}
+export const philosophyHeroSlides = [
+  imagekitUrl('cara/c1.png', 'w-1600,f-auto,q-90'),
+  imagekitUrl('cara/c2.png', 'w-1600,f-auto,q-90'),
+  imagekitUrl('cara/c3.png', 'w-1600,f-auto,q-90'),
+  imagekitUrl('cara/c4.png', 'w-1600,f-auto,q-90'),
+] as const
+
+export const philosophyHeroAlt =
+  'Market intelligence, consulting, and industrial operations visuals'
 
 export type PhilosophyIcon =
   | (typeof philosophyPrinciples)[number]['icon']

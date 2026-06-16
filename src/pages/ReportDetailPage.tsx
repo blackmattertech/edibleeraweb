@@ -6,7 +6,7 @@ import {
   PageContent,
   PageHeading,
 } from '../components/PageContent'
-import { ogImages } from '../config/site'
+import { ogImages, SITE_EMAIL } from '../config/site'
 import { reports } from '../data/reports'
 
 export function ReportDetailPage() {
@@ -63,7 +63,7 @@ export function ReportDetailPage() {
       <CTABlock
         title="Request full report access"
         description="Contact Edible Era to purchase the complete report or discuss enterprise licensing."
-        linkTo="/contact"
+        linkTo={`mailto:${SITE_EMAIL}`}
         linkText="Request investor report access"
       />
     </PageContent>

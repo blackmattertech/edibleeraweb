@@ -6,7 +6,7 @@ import { PillarInsightPage } from './PillarInsightPage'
 export function InsightSlugPage() {
   const { slug } = useParams()
 
-  if (!slug) return <Navigate to="/insights" replace />
+  if (!slug) return <Navigate to="/" replace />
 
   if (insightPillars[slug]) return <PillarInsightPage />
 
@@ -14,5 +14,5 @@ export function InsightSlugPage() {
     return <InsightArticlePage />
   }
 
-  return <Navigate to="/insights" replace />
+  return <Navigate to="/" replace />
 }

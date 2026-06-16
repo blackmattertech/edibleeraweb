@@ -16,7 +16,6 @@ import {
 import { BrandGreenFacetPattern } from '@/components/ui/brand-green-facet-pattern'
 import {
   whatClientsGainBenefits,
-  whatClientsGainImage,
   whatClientsGainIntro,
   type WhatClientsGainIcon,
 } from '@/data/whatClientsGain'
@@ -136,18 +135,9 @@ export function WhatClientsGainSection() {
             <p className="mt-3 max-w-none text-[0.9375rem] leading-[1.45] text-white sm:mt-4 sm:max-w-md sm:text-base lg:mt-4 lg:max-w-[480px] lg:font-sans lg:text-[20px] lg:font-normal lg:leading-[1.7] lg:text-white/[0.88]">
               {whatClientsGainIntro}
             </p>
-
-            <div className="w-full max-lg:-mt-6 max-lg:leading-none lg:-mt-4 lg:w-auto lg:leading-none">
-              <img
-                src={whatClientsGainImage.src}
-                alt={whatClientsGainImage.alt}
-                loading="lazy"
-                className="mx-auto block h-auto w-full max-w-none object-contain object-top max-lg:-mt-10 max-lg:-mb-8 lg:mx-0 lg:-mt-8 lg:mb-0 lg:w-[112%] lg:max-w-[580px] lg:origin-top-left"
-              />
-            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-2.5 sm:gap-3 max-lg:-mt-8 lg:mt-0 lg:grid-cols-2 lg:gap-[18px] lg:self-start">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:mt-0 lg:grid-cols-2 lg:gap-[18px] lg:self-start">
             {whatClientsGainBenefits.map((benefit, index) => (
               <BenefitCard
                 key={benefit.label}

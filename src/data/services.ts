@@ -19,7 +19,7 @@ export const services: Record<string, ServicePage> = {
       'Our edible oil market intelligence India platform delivers commodity-specific dashboards, import analytics, and refinery margin indicators for decision-makers across the oils and speciality fats industry.',
     sections: [
       {
-        title: 'Commodity Coverage Across the Edible Oil Sector',
+        title: 'Commodity Coverage Across Edible Oil & Speciality Fats',
         content: [
           'We monitor palm, soybean, mustard, sunflower, rice bran, and speciality fats with India and Nepal context. Clients receive structured updates on import volumes, price spreads, and policy changes affecting procurement.',
           'Palm oil market analysis and soybean oil market data India modules help trading desks benchmark offers and evaluate substitution opportunities across refined oils.',
@@ -54,7 +54,7 @@ export const services: Record<string, ServicePage> = {
       'As an edible oil consulting firm India clients trust for execution-focused advice, Edible Era supports producers, refiners, and brands with market entry, channel strategy, and long-term portfolio planning.',
     sections: [
       {
-        title: 'Edible Oil Sector Strategy Frameworks',
+        title: 'Edible Oil & Speciality Fats Strategy Frameworks',
         content: [
           'We design growth strategies grounded in commodity economics, regional demand pockets, and regulatory trajectories across India and Nepal.',
           'Engagements cover brand positioning, B2B contract strategy, and supply chain redesign for edible speciality fats businesses scaling nationally.',
