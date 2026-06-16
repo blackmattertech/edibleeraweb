@@ -83,7 +83,10 @@ export function ConsultingApproachSection() {
               <img
                 src={consultingApproachImage.src}
                 alt={consultingApproachImage.alt}
+                width={900}
+                height={560}
                 loading="lazy"
+                decoding="async"
                 className="aspect-[16/10] w-full object-cover"
               />
             </div>

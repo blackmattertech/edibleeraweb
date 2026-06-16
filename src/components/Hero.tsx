@@ -9,10 +9,10 @@ const FEATURED_TRANSFORM = 'w-960,h-1200,c-at_max,f-auto,q-85'
 
 function HeroHeadlineMobile() {
   return (
-    <h1 className="font-dm-serif text-[1.65rem] font-normal leading-[1.28] tracking-[-0.015em] text-white sm:text-[1.85rem]">
+    <h2 className="font-dm-serif text-[1.65rem] font-normal leading-[1.28] tracking-[-0.015em] text-white sm:text-[1.85rem]">
       Connecting Products, Distribution & Market Opportunities Across the{' '}
       <span className="text-[#9FD27C]">Edible Oil Industry</span>
-    </h1>
+    </h2>
   )
 }
 

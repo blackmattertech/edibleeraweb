@@ -262,7 +262,10 @@ export function ServicesPage() {
                 <img
                   src={imagekitUrl('service1', 'w-1800,f-auto,q-90')}
                   alt="Market intelligence dashboard and analysts reviewing global trade flows"
+                  width={1800}
+                  height={1200}
                   loading="lazy"
+                  decoding="async"
                   className="mx-auto h-auto w-full max-w-[22rem] rounded-2xl object-cover object-center sm:max-w-[26rem] lg:h-full lg:max-w-none lg:rounded-none"
                 />
               </div>
@@ -329,7 +332,10 @@ export function ServicesPage() {
               <img
                 src={imagekitUrl('service2', 'w-1800,f-auto,q-90')}
                 alt="Strategic consulting session with growth dashboards and market opportunity planning"
+                width={1800}
+                height={1200}
                 loading="lazy"
+                decoding="async"
                 className="mx-auto h-auto w-full max-w-[22rem] rounded-2xl object-cover object-center sm:max-w-[26rem] lg:h-full lg:max-w-none lg:rounded-none"
               />
             </div>

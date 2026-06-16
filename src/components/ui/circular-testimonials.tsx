@@ -278,6 +278,10 @@ export function CircularTestimonials({
                 <img
                   src={testimonial.src}
                   alt={testimonial.name}
+                  width={640}
+                  height={640}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full bg-[#FFFFFF] object-contain p-1"
                 />
               ) : (

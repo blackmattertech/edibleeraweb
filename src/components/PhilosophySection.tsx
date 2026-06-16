@@ -200,7 +200,10 @@ function VisualComposition({ mobile = false }: { mobile?: boolean }) {
               key={slide}
               src={slide}
               alt={philosophyHeroAlt}
+              width={1600}
+              height={1000}
               loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
               className={`h-auto w-full object-cover object-center transition-opacity duration-700 ${
                 activeSlide === index
                   ? 'relative opacity-100'

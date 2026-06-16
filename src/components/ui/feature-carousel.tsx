@@ -221,6 +221,10 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     <img
                       src={image.src}
                       alt={image.alt}
+                      width={768}
+                      height={1200}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full rounded-3xl border-2 border-foreground/10 object-cover shadow-2xl"
                     />
                   </div>
